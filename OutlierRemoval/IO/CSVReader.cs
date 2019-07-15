@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using Outliers.Data;
+
+namespace Outliers.IO
+{
+    public class CSVHandler: IDataHandler
+    {
+        private static readonly log4net.ILog _logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        public bool TryGetData(string filePath, out List<PriceWithDate> csvData, out string status)
+        {
+            _logger.Error($"Reading input from file: {filePath}");
+            csvData = new List<PriceWithDate>();
+            status = "";
+            try
+            {
+                using (var reader = new StreamReader(filePath))
+                {
+                    var columnNames = reader.ReadLine();
+
+                    while (!reader.EndOfStream)
+                    {
+                        var nextLine = reader.ReadLine().Split(',');
+                        var date = DateTime.Parse(nextLine[0]);
+                        var price = Convert.ToDouble(nextLine[1]);
+                        csvData.Add(new PriceWithDate(date, price));
+                    }
+                }
+                return true;
+                
+            }
+            catch(FileNotFoundException ex)
+            {
+                status = $"File {filePath} could not be found from directory {Directory.GetCurrentDirectory()}";
+                _logger.Error(status, ex);
+                return false;
+            }
+
+        }
+
+        public void WriteOutput(string filePath, IEnumerable<PriceWithDate> csvData)
+        {
+            try
+            {
+                using (var writer = new StreamWriter(filePath))
+                {
+                    writer.WriteLine("Date,Price");
+                    foreach (var entry in csvData)
+                    {
+                        writer.WriteLine($"{entry.Date.ToShortDateString()},{entry.Price}");
+                    }
+                }
+            }
+            catch(IOException ex)
+            {
+                _logger.Error($"Exception writing output to file: {filePath}", ex);
+                throw;
+            }
+            _logger.Info($"Output written to file: {filePath}");
+        }
+    }
+}

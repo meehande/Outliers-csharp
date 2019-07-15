@@ -1,0 +1,13 @@
+﻿using AspectCapital.Data;
+using System.Collections.Generic;
+
+namespace AspectCapital
+{
+    public interface ICalculator
+    {
+        double CalculateAverage(List<PriceWithDate> dataPoints);
+        double CalculateStdDeviation(List<PriceWithDate> dataPoints, double mean);
+
+    }
+
+}

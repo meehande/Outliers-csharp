@@ -1,0 +1,10 @@
+﻿using AspectCapital.Data;
+using System.Collections.Generic;
+
+namespace AspectCapital.OutlierRemovers
+{
+    public interface IOutlierRemover
+    {
+        IEnumerable<PriceWithDate> RemoveOutliers(List<PriceWithDate> dataWithOutliers);
+    }
+}

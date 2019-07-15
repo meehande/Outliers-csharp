@@ -1,0 +1,11 @@
+﻿using System.Collections.Generic;
+using AspectCapital.Data;
+
+namespace AspectCapital.IO
+{
+    public interface IDataHandler
+    {
+        bool TryGetData(string filePath, out List<PriceWithDate> outlierData, out string status);
+        void WriteOutput(string filePath, IEnumerable<PriceWithDate> outlierData);
+    }
+}

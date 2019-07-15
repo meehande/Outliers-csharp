@@ -1,0 +1,10 @@
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\bin\x64\Debug\OutlierRemoval.exe.config
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\bin\x64\Debug\OutlierRemoval.exe
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\bin\x64\Debug\OutlierRemoval.pdb
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\bin\x64\Debug\log4net.dll
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\bin\x64\Debug\log4net.xml
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\obj\x64\Debug\OutlierRemoval.csprojAssemblyReference.cache
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\obj\x64\Debug\OutlierRemoval.csproj.CoreCompileInputs.cache
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\obj\x64\Debug\OutlierRemoval.csproj.CopyComplete
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\obj\x64\Debug\OutlierRemoval.exe
+C:\Users\meeha\source\repos\AspectCapital\AspectCapital\OutlierRemoval\obj\x64\Debug\OutlierRemoval.pdb
